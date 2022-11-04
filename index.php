@@ -41,40 +41,78 @@
                 <input type="text" required value="">
             </div>
             <div class="item">
-                <label>Email</label>
-                <select class="country">
-                    <option value="country">Select Country</option>
-                    <option value="indonesia">Indonesia</option>
-                    <option value="australia">Australia</option>
-                    <option value="amerika">Amerika Serikat</option>
-                    <option value="germany">Germany</option>
-                </select>
+            <label>Phone</label>
+                <input type="number" required value="">
             </div>
-
         </div>
         <div class="half">
             <div class="item">
-                <label>Email</label>
-                <input type="text" required value="">
+            <label>Country</label>
+                <select class="country">
+                    <option>Select Country</option>
+                    <option>Indonesia</option>
+                    <option>Australia</option>
+                    <option>Amerika Serikat</option>
+                    <option>Germany</option>
+                </select>
             </div>
             <div class="item">
-                <label>Password</label>
-                <input type="password" required value="">
-                <datalist id="cars">
-                    <option>Volvo</option>
-                    <option>Saab</option>
-                    <option>Mercedes</option>
-                    <option>Audi</option>
-                </datalist>
+                <label>City</label>
+                <select class="city">
+                    <option>Select City</option>
+                    <option>Jakarta</option>
+                    <option>Bekasi</option>
+                    <option>Depok</option>
+                    <option>Bandung</option>
+                </select>
             </div>
         </div>
-        <div class="full">
+        <div class="half">
             <div class="item">
-                <label>Phone</label>
+                <label>Address</label>
                 <input type="text" required value="">
             </div>
+            <div class="item">
+                <label>Postal Code</label>
+                <input type="number" required value="">
+            </div>
+        </div>
+        <div class="half">
+            <div class="item">
+                <label>Driving License<i class="fa fa-question-circle"></i></label>
+                <input type="text" required value="">
+            </div>
+            <div class="item">
+                <label>Nationality<i class="fa fa-question-circle"></i></label>
+                <input type="text" required value="">
+            </div>
+        </div>
+        <div class="half">
+            <div class="item">
+                <label>Place of Birth</label>
+                <input type="text" required value="">
+            </div>
+            <div class="item">
+                <label>Date of Birth<i class="fa fa-question-circle"></i></label>
+                <input type="date" required value="">
+            </div>
+        </div>
+        <br>
+        <div class="title">
+            <h2>Profesional Summary</h2>
+        </div>
+        <p>Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your
+            biggest achievment, best qualities and skills
+        </p>
+        <br>
+        <textarea type="textarea"></textarea>
+        <br>
+        <div class="title">
+            <h2>Employment History</h2>
         </div>
     </form>
+
+    
 </body>
 
 </html>
