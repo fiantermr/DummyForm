@@ -26,6 +26,7 @@ form h2{
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 20px;
+    
 }
 
 form h5{
@@ -82,6 +83,11 @@ textarea {
     color: black;
     resize: none;
     margin-bottom: 30px;
+}
+
+form p .editor {
+    color: blue;
+    cursor: pointer;
 }
 
 
