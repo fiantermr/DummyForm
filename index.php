@@ -84,7 +84,7 @@
         <div class="half">
             <div class="item">
                 <label>Driving License<i class="fa fa-question-circle"></i></label>
-                <input type="text" required value="">
+                <input type="number" required value="">
             </div>
             <div class="item">
                 <label>Nationality<i class="fa fa-question-circle"></i></label>
@@ -114,7 +114,9 @@
             <p>Show your relevant experience (last 10 years). Use bullet points to note your achievment. If possible - use numbers/facts
                 (Achievment X, measured by Y, by doing Z)
             </p>
-            <p style="color: #00b4d8; cursor:pointer" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+            <div id="employment">
+            </div>
+            <p style="color: #00b4d8; cursor:pointer" href="#" data-toggle="modal" data-target="#Centertitle">
                 + Add Employment
             </p>
         </div>
@@ -139,6 +141,39 @@
             </p>
         </div>
     </form>
+ <!-- History -->
+    <div class="modal fade" id="Centertitle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color:black" id="exampleModalLongTitle">Education</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label style="color:black">Job title</label>
+                    <br>
+                    <input placeholder="BPJS" class="text1" id="job" type="text" required value="">
+                    <label style="color:black">Employer</label>
+                    <br>
+                    <input placeholder="Web Developer" class="text1" id="employe" type="text" required value="">
+                    <label style="color:black">Duration</label>
+                    <br>
+                    <input placeholder="2018-2022" class="text1" id="h_dursa" type="text" required value="">
+                    <label style="color:black">City</label>
+                    <br>
+                    <input placeholder="Jakarta" class="text1" id="h_city" type="text" required value="">
+                    <label style="color:black">Description</label>
+                    <textarea class="textarea2" style="color:black" id="h_desc" type="textarea" placeholder="Write your summary in here"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="addhistory">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Education -->
     <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -186,7 +221,6 @@
                     <label style="color:black">Skill</label>
                     <br>
                     <input placeholder="HTML" id="userskill" type="text" required value="">
-
                     <select class="city" id="experience" name="experience">
                         <option>Select Experience</option>
                         <option value="skillful">Skillful</option>
@@ -249,6 +283,7 @@
     <input type="hidden" name="degree[]" value="${degree}">
     <input type="hidden" name="dursa[]" value="${dursa}">
     <input type="hidden" name="city[]" value="${city}">
+    <input type="hidden" name="e_desc[]" value="${e_desc}">
                 <h3>${school}</h3>
                 <h4>${degree} - (${dursa})</h4>
                 <h5>${city}</h5>
@@ -261,5 +296,46 @@
         $('#dursa').val();
         $('#city').val();
         $('#e_desc').val();
+    })
+
+    $("#addhistory").click(function() {
+        var job = $('#job').val();
+        var employe = $('#employe').val();
+        var h_dursa = $('#h_dursa').val();
+        var h_city = $('#h_city').val();
+        var h_desc = $('#h_desc').val();
+        if(!job){
+            return;
+        }
+        if(!employe){
+            return;
+        }
+        if(!h_dursa){
+            return;
+        }
+        if(!h_city){
+            return;
+        }
+        if(!h_desc){
+            return;
+        }
+        $("#employment").append(`<div style="display: inline-block; border: 1px solid white; border-radius: 2px; padding: 5px; margin: 2px">
+    <input type="hidden" name="school[]" value="${job}">
+    <input type="hidden" name="degree[]" value="${employe}">
+    <input type="hidden" name="h_dursa[]" value="${h_dursa}">
+    <input type="hidden" name="h_city[]" value="${h_city}">
+    <input type="hidden" name="h_desc[]" value="${h_desc}">
+                <h3>${job}</h3>
+                <h4>${employe} - (${h_dursa})</h4>
+                <h5>${h_city}</h5>
+                <h6>${h_desc}</h6
+                    <br>
+                <button type="button" class="btn btn-danger" onClick="removeskill(this)">Remove</button>
+            </div>`)
+        $('#job').val();
+        $('#employe').val();
+        $('#h_dursa').val();
+        $('#h_city').val();
+        $('#h_desc').val();
     })
 </script>
